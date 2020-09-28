@@ -10,21 +10,33 @@
     <div class="page-container">
         <div class="container">
             <h1>Register With Us</h1>
-            
-            <form action="" class="fields">
-                <p>Username</p>
-                <input type="text" placeholder="Enter username">
+
+            <form action="" id="form" class="fields">
+                <div class="form-control">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Enter username">
+                    <small>Error Message</small>
+                </div>
+                
+                <div class="form-control">
+                    <label>Email</label>
+                    <input type="text" id="email" placeholder="Enter email">
+                    <small>Error Message</small>
+                </div>
     
-                <p>Email</p>
-                <input type="email" placeholder="Enter email">
+                <div class="form-control">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                    <small>Error Message</small>
+                </div>
+                
+                <div class="form-control">
+                    <label>Confirm Password</label>
+                    <input type="passsord" id="password2" placeholder="Enter password again">
+                    <small>Error Message</small>
+                </div>
     
-                <p>Password</p>
-                <input type="password" placeholder="Enter password">
-    
-                <p>Confirm Password</p>
-                <input type="passsord" placeholder="Enter password again">
-    
-                <input type="submit">
+                <input type="submit" id="submitButton">
             </form>
     
         </div>

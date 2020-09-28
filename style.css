@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +12,7 @@
     font-family: 'Roboto';
 }
 
-p {
+label {
     font-size: 30px;
 }
 
@@ -22,10 +27,9 @@ p {
 .container  {
     background: #fff;
     width: 600px;
-    height: 800px;
     border-radius: 5px;
     box-shadow: 1px 1px 10px 3px #ccc;
-    padding: 2rem 4rem;
+    padding: 3rem 4rem;
     display: flex;
     flex-direction: column;
 }
@@ -38,15 +42,24 @@ p {
     margin-top: 2rem;
 }
 
+small {
+    margin-bottom: 2rem;
+    display: block;
+}
 
 .container .fields input {
     margin-top: 0.8rem;
-    margin-bottom: 3rem;
     height: 3rem;
     width: 100%;
     font-size: 1.5rem;
     padding: 0 1rem;
     border-radius: 5px;
+    border: 3px solid #f0f0f0;
+}
+
+.container .fields input:focus {
+    outline: 0;
+    border-color: #777;
 }
 
 .container .fields input[type="submit"] {
@@ -60,4 +73,22 @@ p {
 
 .container .fields input[type="submit"]:hover {
     opacity: 0.9;
+}
+
+/* This part of for the JS */
+.form-control.success input {
+    border-color: var(--success-color)
+}
+
+.form-control.error input {
+    border-color: var(--error-color);
+}
+
+.form-control small {
+    color: var(--error-color);
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
 }
