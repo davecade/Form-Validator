@@ -1,21 +1,19 @@
+//====== VARIABLES =====//
 const username = {
     type: 'username',
     element: document.getElementById('username'),
     checked: false
 }
-
 const email = {
     type: 'email',
     element: document.getElementById('email'),
     checked: false
 }
-
 const userPassword = {
     type: 'password',
     element: document.getElementById('password'),
     checked: false
 }
-
 const userPassword2 = {
     type: 'password',
     element: document.getElementById('password2'),
@@ -25,15 +23,7 @@ let fields = [username, email, userPassword, userPassword2]
 const submitButton = document.getElementById('submitButton');
 
 
-function showError(element, error) {
-
-    document.querySelector(`#${element.id} + small`).innerHTML = error;
-    element.parentNode.classList.add('error')
-}
-
-function showSuccess(element) {
-    element.parentNode.classList.add('success')
-}
+//====== UTILITY FUNCTIONS ======//
 
 //Capitalizes a word
 function capitalize(word) {
@@ -50,6 +40,22 @@ function checkLength(word) {
     }
     return true;
 }
+
+
+//====== MAIN FUNCTIONS ======//
+
+//Displays error message on form when input is not valid.
+function showError(element, error) {
+
+    document.querySelector(`#${element.id} + small`).innerHTML = error;
+    element.parentNode.classList.add('error')
+}
+
+//Displays green border showing the input field is valid.
+function showSuccess(element) {
+    element.parentNode.classList.add('success')
+}
+
 
 // Checks if any fields are empty
 function checkRequired(fields) {
@@ -102,8 +108,8 @@ function checkPasswords(pass1, pass2) {
                 showError(pass2.element, `Passwords do not match.`)
             }
         } else {
-            showError(pass1.element, `Passwords must be at least 5 characters and maximum of 10.`)
-            showError(pass2.element, `Passwords must be at least 5 characters and maximum of 10.`)
+            showError(pass1.element, `Password must be at least 5 characters and maximum of 10.`)
+            showError(pass2.element, `Password must be at least 5 characters and maximum of 10.`)
         }
     }
 }
@@ -117,7 +123,7 @@ function reset() {
     })
 }
 
-// Event Listener for when Submit button is clicked
+// Event Listener for when the Submit button is clicked
 submitButton.addEventListener('click', () => {
     reset();
     checkRequired(fields);
